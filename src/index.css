@@ -1,13 +1,51 @@
+@font-face {
+	font-family: 'dejavusanscondensed';
+	src: url('./fonts/dejavusanscondensed-webfont.eot');
+	src: local('☺'), url('./fonts/dejavusanscondensed-webfont.ttf') format('truetype'), url('./fonts/dejavusanscondensed-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'squaremtavruli';
+    src: url('./fonts/bpg_square_mtavruli_2009-webfont.eot');
+    src: url('./fonts/bpg_square_mtavruli_2009-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/bpg_square_mtavruli_2009-webfont.woff') format('woff'),
+         url('./fonts/bpg_square_mtavruli_2009-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+	font-family: 'nino';
+	src: url('./fonts/nino.eot');
+  src: local('☺'), url('./fonts/nino.ttf') format('truetype'), url('./fonts/nino.svg') format('svg'),
+  url('./fonts/nino.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'dejavusanscondensed', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size:14px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.swiper-slide img{
+  width:100%;
+  height:auto;
+}
+#appartments-slider{
+  height: 548px;
+}
+#basic-navbar-nav{
+  align-self: stretch;
+  align-items:stretch;
 }
