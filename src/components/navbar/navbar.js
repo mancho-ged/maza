@@ -9,12 +9,12 @@ import logo from "../../images/logo-new.png";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 const NavbarStyled = styled.div`
-  font-size: 0.9em;
+  font-size: 1em;
   position: fixed;
   width: 100%;
   z-index: 100;
   .header {
-    background: rgba(256, 256, 256, 0.95);
+    
     border-bottom: 2px solid #f0f0f0;
     padding: 0;
     display: flex;
@@ -22,9 +22,10 @@ const NavbarStyled = styled.div`
     margin: 0;
     font-family: "nino";
     color: #030303;
+    background: rgba(248, 249, 250, 0.95)!important;
     * {
       cursor: pointer;
-    }
+    };
     a {
       display: flex;
       align-items: center;
@@ -50,7 +51,6 @@ export default function TopNavbar() {
   return (
     <NavbarStyled>
       <Navbar
-        bg="light"
         expand="lg"
         className="header"
         role="navigation"
@@ -103,7 +103,7 @@ export default function TopNavbar() {
               <Nav.Link
                 eventKey="4"
                 as={Link}
-                to="section4"
+                to="partner-companies"
                 activeClass="link-active"
                 spy={true}
                 smooth={true}
@@ -114,7 +114,7 @@ export default function TopNavbar() {
               <Nav.Link
                 eventKey="5"
                 as={Link}
-                to="section5"
+                to="completed-units"
                 activeClass="link-active"
                 spy={true}
                 smooth={true}
@@ -125,7 +125,7 @@ export default function TopNavbar() {
               <Nav.Link
                 eventKey="6"
                 as={Link}
-                to="contact"
+                to="footer"
                 activeClass="link-active"
                 spy={true}
                 smooth={true}

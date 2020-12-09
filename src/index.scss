@@ -1,3 +1,32 @@
+/* The following block can be included in a custom.scss */
+
+/* make the customizations */
+$theme-colors: (
+    "info": tomato,
+    "danger": teal
+);
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1280px );
+$container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1180px );
+$grid-gutter-width:           20px;
+$enable-prefers-reduced-motion-media-query: false;
+$font-family-base: 'dejavusanscondensed';
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Optional
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+
+
 @font-face {
 	font-family: 'dejavusanscondensed';
 	src: url('./fonts/dejavusanscondensed-webfont.eot');
@@ -48,4 +77,12 @@ code {
 #basic-navbar-nav{
   align-self: stretch;
   align-items:stretch;
+}
+.border {
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #060606;
+  margin: 0 auto;
+  margin-bottom:20px;
 }
