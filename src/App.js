@@ -5,6 +5,7 @@ import Section3 from './components/section3';
 import PartnerCompanies from './components/partner-companies';
 import CompletedUnits from './components/completed-units';
 import Footer from './components/footer';
+import TypicalAppartments from "./components/typical-appartments";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <TopNavbar />
       <Section1 />
       <Section2 />
+      <TypicalAppartments />
       <Section3 />
       <PartnerCompanies />
       <CompletedUnits />

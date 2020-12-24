@@ -86,3 +86,19 @@ code {
   margin: 0 auto;
   margin-bottom:20px;
 }
+.large-slider{
+  height:auto;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, .8);
+}
+h1, h2, h3, h4{
+  font-family:'nino';
+}
+
+@media screen and (min-width:768px){
+  .large-slider{
+    height:547px; 
+    overflow:hidden;
+  }
+}

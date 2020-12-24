@@ -92,6 +92,17 @@ export default function TopNavbar() {
               <Nav.Link
                 eventKey="3"
                 as={Link}
+                to="typical-appartments"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                activeClass="link-active"
+              >
+                ტიპიური ბინები
+              </Nav.Link>
+              <Nav.Link
+                eventKey="4"
+                as={Link}
                 to="section3"
                 activeClass="link-active"
                 spy={true}
@@ -101,7 +112,7 @@ export default function TopNavbar() {
                 მიმდინარე პროექტი
               </Nav.Link>
               <Nav.Link
-                eventKey="4"
+                eventKey="5"
                 as={Link}
                 to="partner-companies"
                 activeClass="link-active"
@@ -112,7 +123,7 @@ export default function TopNavbar() {
                 პარტნიორი კომპანიები
               </Nav.Link>
               <Nav.Link
-                eventKey="5"
+                eventKey="6"
                 as={Link}
                 to="completed-units"
                 activeClass="link-active"
@@ -123,7 +134,7 @@ export default function TopNavbar() {
                 დასრულებული პროექტები
               </Nav.Link>
               <Nav.Link
-                eventKey="6"
+                eventKey="7"
                 as={Link}
                 to="footer"
                 activeClass="link-active"

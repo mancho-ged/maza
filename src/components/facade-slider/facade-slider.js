@@ -38,14 +38,15 @@ const FacadeSlider = () => {
       id="facade-slider"
       spaceBetween={50}
       slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
+      navigation = {false}
+      pagination={false}
       scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
+      // onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log("slide change")}
       speed={500}
       autoplay
       loop
+      allowTouchMove = {false}
     >
       <SwiperSlide>
             <img src={facade1} alt="Slide 1" />

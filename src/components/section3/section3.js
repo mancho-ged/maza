@@ -7,7 +7,7 @@ import AppartmentsSlider from "../appartments-slider"
 
 const Section3Styled = styled.div`
   background-color: #f6f6f6;
-  h1{
+  h2{
     margin-top:88px;
   }
 `;
@@ -19,11 +19,11 @@ export default function Section3() {
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
-              <h1>მიმდინარე პროექტი</h1>
-              <span class="border"></span>
+              <h2>მიმდინარე პროექტი</h2>
+              <span className="border"></span>
             </div>
 
-            <div className="col-md-8">
+            <div className="col-md-8 large-slider">
               <FacadeSlider />
             </div>
             <div className="col-md-4" style={{height:"500px"}}>

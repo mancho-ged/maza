@@ -42,11 +42,10 @@ const AppartmentsSlider = () => {
       slidesPerView={2}
     //   navigation
     //   pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
+      // scrollbar={{ draggable: true }}
       speed={500}
       autoplay = {{disableOnInteraction:false}}
+      allowTouchMove = {false}
       
       loop
     >
@@ -70,6 +69,9 @@ const AppartmentsSlider = () => {
       </SwiperSlide>
       <SwiperSlide>
             <img src={bina68_1} alt="Slide 7" />
+      </SwiperSlide>
+      <SwiperSlide>
+            <img src={bina68_2} alt="Slide 7" />
       </SwiperSlide>
     </Swiper>
   );
