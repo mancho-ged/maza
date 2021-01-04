@@ -5,6 +5,7 @@ import Wrapper from "../wrapper/wrapper";
 
 const Section2Styled = styled.div`
   background-color: #fff;
+  padding: 0 15px;
 `;
 
 export default function Section2() {

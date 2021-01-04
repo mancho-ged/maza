@@ -11,6 +11,12 @@ const PartnerCompaniesStyled = styled.div`
   img {
     width: 200px;
   }
+  @media screen and (max-width: 768px){
+    .justify-content-between{
+      justify-content:center!important;
+    }
+    
+  }
 `;
 
 export default function PartnerCompanies() {

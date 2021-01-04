@@ -12,6 +12,9 @@ const ContactStyled = styled.div`
           text-decoration:none;
       }
   }
+  div{
+    padding-bottom: 41px;
+  }
   div:hover{
       opacity:.6;
   }

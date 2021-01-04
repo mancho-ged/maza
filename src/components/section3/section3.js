@@ -3,12 +3,33 @@ import styled from "styled-components";
 
 import Wrapper from "../wrapper/wrapper";
 import FacadeSlider from "../facade-slider";
-import AppartmentsSlider from "../appartments-slider"
+import AppartmentsSlider from "../appartments-slider";
 
 const Section3Styled = styled.div`
   background-color: #f6f6f6;
-  h2{
-    margin-top:88px;
+  h2 {
+    margin-top: 88px;
+  }
+  .appartments-slider-block {
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  @media screen and (max-width:992px) {
+    .appartments-slider-block {
+      height: 345px;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .appartments-slider-block {
+      height: 520px;
+    }
+  }
+  @media screen and (min-width:1200px) {
+    .appartments-slider-block {
+      height: 345px;
+      overflow:visible;
+    }
   }
 `;
 
@@ -26,7 +47,9 @@ export default function Section3() {
             <div className="col-md-8 large-slider">
               <FacadeSlider />
             </div>
-            <div className="col-md-4" style={{height:"500px"}}>
+            <div
+              className="col-md-4 appartments-slider-block"
+            >
               <AppartmentsSlider />
             </div>
           </div>

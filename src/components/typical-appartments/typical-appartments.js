@@ -12,14 +12,74 @@ const TypicalAppartmentsStyle = styled.div`
 `;
 
 export default class TypicalAppartments extends React.Component {
-  
   render() {
     let binebi = [
-      {project: 1, floors: ["I", "II", "III"], sold: [false, false, false]}
+      {
+        project: 1,
+        name: "ტიპიური პროექტი 1",
+        floors: [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "V",
+          "VI",
+          "VII",
+          "VIII",
+          "IX",
+          "X",
+          "XI",
+        ],
+        sold: [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+        ],
+        area: "95,75"
+      },
+      {
+        project: 1,
+        name: "ტიპიური პროექტი 2",
+        floors: [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "V",
+          "VI",
+          "VII",
+          "VIII",
+          "IX",
+          "X",
+          "XI",
+        ],
+        sold: [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+        ],
+        area: "95,75"
+      },
     ];
-    let appartments = binebi.map(app => {
-      return <TypicalAppartmentItem />
-    })
+    let appartments = binebi.map((app) => {
+      return <TypicalAppartmentItem {...app} />;
+    });
 
     return (
       <TypicalAppartmentsStyle id="typical-appartments">
@@ -31,9 +91,12 @@ export default class TypicalAppartments extends React.Component {
                 <span className="border"></span>
               </div>
 
-              <ul id="portfolio-grid" className="projectlist clearfix">
-                { appartments }
-              </ul>
+              <div
+                id="portfolio-grid"
+                className="projectlist clearfix col-md-12"
+              >
+                {appartments}
+              </div>
             </div>
           </div>
         </Wrapper>

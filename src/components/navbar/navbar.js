@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 
-import Wrapper from "../wrapper/wrapper";
 import logo from "../../images/logo-new.png";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
@@ -41,6 +40,13 @@ const NavbarStyled = styled.div`
     }
     border-top: 1px solid #0361d8;
   }
+  @media screen and (max-width: 992px){
+    .navbar-nav{
+      a{
+        justify-content: center;
+      }
+    }
+  }
 `;
 
 function scrollToTop() {
@@ -65,8 +71,8 @@ export default function TopNavbar() {
             </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
+          <Navbar.Collapse id="basic-navbar-nav" >
+            <Nav className="ml-auto ">
               <Nav.Link
                 eventKey="1"
                 as={Link}
@@ -75,6 +81,7 @@ export default function TopNavbar() {
                 smooth={true}
                 duration={1000}
                 activeClass="link-active"
+                className="d-none d-lg-flex"
               >
                 მთავარი
               </Nav.Link>

@@ -1,15 +1,20 @@
 /* The following block can be included in a custom.scss */
 
 /* make the customizations */
-$theme-colors: (
-    "info": tomato,
-    "danger": teal
-);
+
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1280px );
 $container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1180px );
 $grid-gutter-width:           20px;
 $enable-prefers-reduced-motion-media-query: false;
 $font-family-base: 'dejavusanscondensed';
+// $enable-rounded: false;
+
+$theme-colors: (
+    "primary": #14256f,
+    "info": tomato,
+    "danger": teal,
+    
+);
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
@@ -94,6 +99,31 @@ code {
 }
 h1, h2, h3, h4{
   font-family:'nino';
+  font-weight: bold;
+}
+
+.modal{
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  .modal-content{
+    background: none;
+    border:none;
+    .modal-body{
+      background:rgba(255, 255, 255, .8);
+    }
+    .st0 {
+      opacity: 0;
+      transition: all 0.5s;
+      cursor: pointer;
+      fill: #cedae4;
+    }
+
+    .st0:hover {
+      opacity: 0.8;
+    }
+  }
 }
 
 @media screen and (min-width:768px){
