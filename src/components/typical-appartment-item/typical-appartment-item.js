@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import SwiperCore, {
   Navigation,
-  Pagination,
   Scrollbar,
   A11y,
   Autoplay,

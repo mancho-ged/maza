@@ -2,7 +2,6 @@ import React from 'react'
 import styled from "styled-components";
 
 import Wrapper from "../wrapper/wrapper";
-import AppartmentsSlider from "../appartments-slider";
 import CompletedUnitsSliderLg from '../completed-units-slider-lg';
 import CompletedUnitsThumbsSlider from '../completed-units-thumbs-slider/completed-units-thumbs-slider';
 
