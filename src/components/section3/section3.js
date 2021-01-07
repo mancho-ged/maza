@@ -41,7 +41,7 @@ export default function Section3() {
           <div className="row">
             <div className="col-md-12 text-center">
               <h2>მიმდინარე პროექტი</h2>
-              <span className="border"></span>
+              <h5>ქ. თბილისი, დიდი დიღომი, პეტრე იბერის 22</h5>
             </div>
 
             <div className="col-md-8 large-slider">

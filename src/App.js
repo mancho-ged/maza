@@ -1,5 +1,5 @@
 import TopNavbar from "./components/navbar/navbar";
-import Section1 from './components/section1';
+import CurrentUnit from './components/current-unit';
 import Section2 from './components/section2';
 import Section3 from './components/section3';
 import PartnerCompanies from './components/partner-companies';
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <TopNavbar />
-      <Section1 />
+      <CurrentUnit />
       <Section2 />
       <TypicalAppartments />
       <Section3 />

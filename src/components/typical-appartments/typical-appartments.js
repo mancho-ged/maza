@@ -2,9 +2,10 @@ import React from "react";
 import Wrapper from "../wrapper/wrapper";
 import styled from "styled-components";
 import TypicalAppartmentItem from "../typical-appartment-item";
+import bina1 from "../../images/binebi/BINA-65-1.jpg";
 
 const TypicalAppartmentsStyle = styled.div`
-  background-color: #f6f6f6;
+  background-color: #dedede;
   h2 {
     margin-top: 88px;
   }
@@ -43,10 +44,11 @@ export default class TypicalAppartments extends React.Component {
           false,
           false,
         ],
-        area: "95,75"
+        area: "95,75",
+        images: [bina1]
       },
       {
-        project: 1,
+        project: 2,
         name: "ტიპიური პროექტი 2",
         floors: [
           "I",
@@ -62,7 +64,7 @@ export default class TypicalAppartments extends React.Component {
           "XI",
         ],
         sold: [
-          false,
+          true,
           false,
           false,
           false,
@@ -74,11 +76,12 @@ export default class TypicalAppartments extends React.Component {
           false,
           false,
         ],
-        area: "95,75"
+        area: "95,75",
+        images: [bina1]
       },
     ];
     let appartments = binebi.map((app) => {
-      return <TypicalAppartmentItem {...app} />;
+      return <TypicalAppartmentItem {...app} key={app.project} />;
     });
 
     return (
@@ -88,7 +91,6 @@ export default class TypicalAppartments extends React.Component {
             <div className="row">
               <div className="col-md-12 text-center">
                 <h2>ტიპიური ბინები</h2>
-                <span className="border"></span>
               </div>
 
               <div

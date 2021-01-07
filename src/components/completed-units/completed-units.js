@@ -7,7 +7,7 @@ import CompletedUnitsSliderLg from '../completed-units-slider-lg';
 import CompletedUnitsThumbsSlider from '../completed-units-thumbs-slider/completed-units-thumbs-slider';
 
 const CompletedUnitsStyled = styled.div`
-  background-color: #f5f5f5 ;
+  background-color: #dedede ;
   h2{
     margin-top:88px;
   }
@@ -21,7 +21,7 @@ export default function CompletedUnits() {
           <div className="row">
             <div className="col-md-12 text-center">
               <h2>დასრულებული პროექტი</h2>
-              <span className="border"></span>
+              <h5>ქ.თბილისი,დიდ დიღომი, მირიან მეფის ქუჩა 11<sup>დ</sup></h5>
             </div>
 
             <div className="col-md-8 large-slider">

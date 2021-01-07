@@ -6,11 +6,11 @@ $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1280px );
 $container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1180px );
 $grid-gutter-width:           20px;
 $enable-prefers-reduced-motion-media-query: false;
-$font-family-base: 'dejavusanscondensed';
+$font-family-base: 'nino';
 // $enable-rounded: false;
 
 $theme-colors: (
-    "primary": #14256f,
+    "primary": #445da6,
     "info": tomato,
     "danger": teal,
     
@@ -61,8 +61,8 @@ $theme-colors: (
 
 body {
   margin: 0;
-  font-family: 'dejavusanscondensed', 'Helvetica Neue',
-    sans-serif;
+  // font-family: 'dejavusanscondensed', 'Helvetica Neue',
+  //   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size:14px;
@@ -107,6 +107,21 @@ h1, h2, h3, h4{
     max-width: 100%;
     height: auto;
   }
+  .modal-header .close{
+    color:#14256f;
+    font-weight: 400;
+    font-size: 2.4em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
+    padding-right:0;
+    opacity:1;
+    &:focus{
+      border:none;
+      outline:none;
+    }
+    &:hover{
+      opacity:.6;
+    }
+  }
   .modal-content{
     background: none;
     border:none;
@@ -124,7 +139,28 @@ h1, h2, h3, h4{
       opacity: 0.8;
     }
   }
+  .typical-appartments-item{
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    .badge.sold{
+      background:#445da6;
+      opacity:.6;
+    }
+  }
 }
+
+.modal.fade {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;}
+  
+  .modal.fade.show {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease 0s;}
 
 @media screen and (min-width:768px){
   .large-slider{
