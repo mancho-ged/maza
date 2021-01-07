@@ -13,7 +13,6 @@ export default function Section2() {
     <Section2Styled id="section2">
       <Wrapper>
         <h2>ჩვენ შესახებ</h2>
-        <span className="border"></span>
         <p className="sub-heading">
           კომპანია "მაზა დეველოპმენტი" დაარსდა 2013 წელს, მისი მიზანია შექმნას
           პროექტები . ჩვენი კომპანიის ძირითადი პრინციპებია:
