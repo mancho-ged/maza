@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import SwiperCore, {
-  Navigation,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper";
+import SwiperCore, { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default class TypicalAppartmentItem extends Component {
@@ -29,18 +24,33 @@ export default class TypicalAppartmentItem extends Component {
     if (this.state.isToggleOn) {
       classes += " hover";
     }
-    const { name, area, floors, images, project, sold } = this.props;
+    const {
+      name,
+      livingArea,
+      summerArea,
+      floors,
+      images,
+      project,
+      sold,
+      fullArea,
+      entrance,
+      bathroom,
+      bedroom1,
+      bedroom2,
+      livingRoom
+    } = this.props;
     // const floor = floors.map((floor) => {
     //   return <h4 className="badge badge-primary mr-1">{floor}</h4>;
     // });
     const floor = [];
-    for(let i = 0; i < floors.length; i++){
-      if(sold[i]){
-        floor.push(<h4 className="badge badge-primary mr-1 sold">{floors[i]}</h4>);
+    for (let i = 0; i < floors.length; i++) {
+      if (sold[i]) {
+        floor.push(
+          <h4 className="badge badge-primary mr-1 sold">{floors[i]}</h4>
+        );
       } else {
         floor.push(<h4 className="badge badge-primary mr-1">{floors[i]}</h4>);
       }
-      
     }
 
     const TypicalAppartmentsItemStyle = styled.div`
@@ -55,24 +65,38 @@ export default class TypicalAppartmentItem extends Component {
         font-size: 13px;
         padding: 7px 3px 4px 6px;
         letter-spacing: 3px;
-        &.sold{
-          opacity: .8;
+        &.sold {
+          opacity: 0.8;
           background: #dedede;
         }
       }
-      
+
       img {
         max-width: 100%;
         height: auto;
       }
-      h4{
-        margin-top:15px;
+      h4 {
+        margin-top: 15px;
       }
-      h6{
-        font-size: 72px;
-        margin-top:25px;
+      h6 {
+        font-size: 22px;
+        margin-top: 20px;
       }
     `;
+    const badroom2El = bedroom2 ? (
+      <li>
+        <h6>
+          საძინებელი 2: {bedroom2} მ<sup>2</sup>
+        </h6>
+      </li>
+    ) : null;
+    const livingRoomEl = livingRoom ? (
+      <li>
+        <h6>
+        მისაღები: {livingRoom} მ<sup>2</sup>
+        </h6>
+      </li>
+    ) : null;
 
     return (
       <TypicalAppartmentsItemStyle className="typical-appartments-item">
@@ -84,9 +108,40 @@ export default class TypicalAppartmentItem extends Component {
             <div className="projectinfo">
               <h4>{name}</h4>
               {floor}
-              <h6>
-                {area} მ<sup>2</sup>
-              </h6>
+              <ul className="list-unstyled">
+                <li>
+                  <h6>
+                    საცხოვრებელი ფართი: {livingArea} მ<sup>2</sup>
+                  </h6>
+                </li>
+                <li>
+                  <h6>
+                    საზაფხულო ფართი: {summerArea} მ<sup>2</sup>
+                  </h6>
+                </li>
+                <li>
+                  <h6>
+                    მთლიანი ფართი: {fullArea} მ<sup>2</sup>
+                  </h6>
+                </li>
+                <li>
+                  <h6>
+                    შემოსასვლელი: {entrance} მ<sup>2</sup>
+                  </h6>
+                </li>
+                <li>
+                  <h6>
+                    სველი წერტილი: {bathroom} მ<sup>2</sup>
+                  </h6>
+                </li>
+                <li>
+                  <h6>
+                    საძინებელი: {bedroom1} მ<sup>2</sup>
+                  </h6>
+                </li>
+                {badroom2El}
+                {livingRoomEl}
+              </ul>
             </div>
           </div>
         </div>
@@ -106,14 +161,14 @@ const TypicalAppartmentsItemSlider = ({ images, project }) => {
       //   pagination={{ clickable: true }}
       // scrollbar={{ draggable: true }}
       speed={500}
-      autoplay={{ disableOnInteraction: false }}
+      autoplay
       loop
     >
       <SwiperSlide>
         <img src={images[0]} alt="Slide 1" key={0} />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={images[0]} alt="Slide 1" key={1} />
+        <img src={images[1]} alt="Slide 1" key={1} />
       </SwiperSlide>
     </Swiper>
   );

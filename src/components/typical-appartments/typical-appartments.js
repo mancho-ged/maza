@@ -2,7 +2,8 @@ import React from "react";
 import Wrapper from "../wrapper/wrapper";
 import styled from "styled-components";
 import TypicalAppartmentItem from "../typical-appartment-item";
-import bina1 from "../../images/binebi/BINA-65-1.jpg";
+
+import MazaService from '../../services/maza-service';
 
 const TypicalAppartmentsStyle = styled.div`
   background-color: #dedede;
@@ -14,72 +15,7 @@ const TypicalAppartmentsStyle = styled.div`
 
 export default class TypicalAppartments extends React.Component {
   render() {
-    let binebi = [
-      {
-        project: 1,
-        name: "ტიპიური პროექტი 1",
-        floors: [
-          "I",
-          "II",
-          "III",
-          "IV",
-          "V",
-          "VI",
-          "VII",
-          "VIII",
-          "IX",
-          "X",
-          "XI",
-        ],
-        sold: [
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-        ],
-        area: "95,75",
-        images: [bina1]
-      },
-      {
-        project: 2,
-        name: "ტიპიური პროექტი 2",
-        floors: [
-          "I",
-          "II",
-          "III",
-          "IV",
-          "V",
-          "VI",
-          "VII",
-          "VIII",
-          "IX",
-          "X",
-          "XI",
-        ],
-        sold: [
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-        ],
-        area: "95,75",
-        images: [bina1]
-      },
-    ];
+    let binebi = MazaService.binebi;
     let appartments = binebi.map((app) => {
       return <TypicalAppartmentItem {...app} key={app.project} />;
     });
