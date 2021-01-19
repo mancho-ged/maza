@@ -3,7 +3,6 @@ const FloorItem = ({floorNumber, handleShow, points, sold}) => {
     if(sold){
         classNames += " sold";
     }
-    console.log(sold);
     
  return (
     <g id={floorNumber}>

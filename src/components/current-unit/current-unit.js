@@ -194,7 +194,6 @@ const FloorPlan = ({ managePlanState, currentFloor }) => {
   const handleShow = (currentAppart) => {
     setCurrentAppartment(currentAppart);
     setShow(true);
-    console.log(currentAppartment);
   };
 
   let binebi = MazaService.binebi;
@@ -360,7 +359,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="84,474 84,463 103,463 103,440 726,435 726,461 733,461 733,478"
           />
         </g>
@@ -371,7 +370,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="106,404 728,396 728,404 722,404 723,423 728,423 726,435 103,440 	"
           />
         </g>
@@ -382,7 +381,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="109,367 712,353 712,360 728,360 722,367 723,381 728,381 728,396 106,404 	"
           />
         </g>
@@ -393,7 +392,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="111,330 709,313 709,321.5 723,321.5 723,343 728,343 728,360 712,360 712,353 109,367 	"
           />
         </g>
@@ -404,7 +403,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="109,294 708,272 708,283 722,283 722,289 722,306 723,321.5 709,321.5 709,313 111,330 	"
           />
         </g>
@@ -415,7 +414,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="114,260 707,233 707,246.5 723,246.5 717,253 717,272 723,272 722,283 708,283 708,272 109,294 	"
           />
         </g>
@@ -426,7 +425,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="114,225 705,195 705,210 723,210 716,218 717,233 723,233 723,246.5 707,246.5 707,233 109,259 	"
           />
         </g>
@@ -437,7 +436,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="115,189 703,153 703,171 718,171 718,177 718,195 723,195 723,210 705,210 705,195 109,222 	"
           />
         </g>
@@ -448,7 +447,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="115,153 702,116 702,139 718,134.5 712,144 713,153 718,153 718,171 703,171 703,153 109,187.5 	"
           />
         </g>
@@ -459,7 +458,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="115,116 701,75 701,101 718,100 712,109 713,116 718,116 718,134.5 702,139 702,116 115,153 	"
           />
         </g>
@@ -470,7 +469,7 @@ const FullBuilding = ({ managePlanState }) => {
           }}
         >
           <polygon
-            class="st0"
+            className="st0"
             points="115,87 109,87 109,71 704,22 704,37 699,45 700,54.5 704,66 718,67 718,100 701,101 701,75 115,116 	
 		"
           />

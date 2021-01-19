@@ -46,7 +46,7 @@ export default class TypicalAppartmentItem extends Component {
     for (let i = 0; i < floors.length; i++) {
       if (sold[i]) {
         floor.push(
-          <h4 className="badge badge-primary mr-1 sold">{floors[i]}</h4>
+          <h4 className="badge badge-primary mr-1 sold" >{floors[i]}</h4>
         );
       } else {
         floor.push(<h4 className="badge badge-primary mr-1">{floors[i]}</h4>);
