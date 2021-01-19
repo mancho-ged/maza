@@ -20,7 +20,7 @@ export default class TypicalAppartmentItem extends Component {
   }
 
   render() {
-    let classes = "project mix category_1 mix_all flip-container col-sm-7";
+    let classes = "project mix category_1 mix_all flip-container col-md-7";
     if (this.state.isToggleOn) {
       classes += " hover";
     }
@@ -104,7 +104,7 @@ export default class TypicalAppartmentItem extends Component {
           <div className={classes} onTouchStart={this.handleTouch}>
             <TypicalAppartmentsItemSlider images={images} project={project} />
           </div>
-          <div className="col-sm-5">
+          <div className="col-md-5">
             <div className="projectinfo">
               <h4>{name}</h4>
               {floor}
@@ -151,7 +151,6 @@ export default class TypicalAppartmentItem extends Component {
 }
 
 const TypicalAppartmentsItemSlider = ({ images, project }) => {
-  console.log(images);
   return (
     <Swiper
       id={`appartments-slider-${project}`}

@@ -5,7 +5,7 @@ import facebookIcon from "../../images/icons/facebook-large.png";
 import styled from 'styled-components';
 
 const ContactStyled = styled.div`
-  padding-top: 88px;
+  padding-top: 38px;
   a{
       color:#fff;
       &:hover{
@@ -13,7 +13,7 @@ const ContactStyled = styled.div`
       }
   }
   div{
-    padding-bottom: 41px;
+    padding-bottom: 31px;
   }
   div:hover{
       opacity:.6;
