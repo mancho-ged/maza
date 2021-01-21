@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Wrapper from "../wrapper/wrapper";
 import Contact from "../contact";
 
 const FooterStyled = styled.footer`

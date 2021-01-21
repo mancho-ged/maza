@@ -16,9 +16,9 @@ const TypicalAppartmentsStyle = styled.div`
 export default class TypicalAppartments extends React.Component {
   render() {
     let binebi = MazaService.binebi;
-    let appartments = binebi.map((app) => {
-      return <TypicalAppartmentItem {...app} key={app.project} />;
-    });
+    let appartments = binebi.map((app) => 
+      <TypicalAppartmentItem key={app.project.toString()} {...app}  />
+    );
 
     return (
       <TypicalAppartmentsStyle id="typical-appartments">
