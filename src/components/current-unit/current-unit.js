@@ -43,8 +43,20 @@ const CurrentUnitStyled = styled.div`
   }
   .floor-plan-container {
     margin-top: 30px;
-    .floor-container{
-      position:relative;
+    .floor-container {
+      position: relative;
+      svg {
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+      }
+    }
+    .legend{
+      margin-bottom: 22px;
+      svg{
+        margin-left: 15px;
+      }
     }
     .st0 {
       opacity: 0;
@@ -54,17 +66,15 @@ const CurrentUnitStyled = styled.div`
       &.sold {
         fill: #000;
         opacity: 0.7;
+        fill: url(#polka-dots);
+        &:hover{
+          opacity:.9;
+        }
       }
     }
 
     .st0:hover {
       opacity: 0.8;
-    }
-    svg {
-      position: absolute;
-      width: 100%;
-      left: 0px;
-      top: 0px;
     }
   }
   .container-building {
@@ -298,6 +308,20 @@ const FloorPlan = ({ managePlanState, currentFloor }) => {
     );
   });
 
+  const RomanLetters = [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+    "XI",
+  ];
+
   return (
     <div className="container floor-plan-container">
       <div
@@ -311,23 +335,92 @@ const FloorPlan = ({ managePlanState, currentFloor }) => {
         <span></span>
         <span></span>
       </div>
-      <h3>სართული {currentFloor}</h3>
-      <div className="floor-container">
-      <img src={fullPlan} alt="Full Plan" />
+      <h3>სართული {RomanLetters[currentFloor - 1]}</h3>
+      <div className="d-flex justify-content-end legend">
+        გაყიდული 
       <svg
+        width="16px"
+        height="16px"
+        viewBox="0 0 16 16"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 900 338"
-        xmlSpace="preserve"
       >
-        {/* <g id="Layer_1">
+        <defs>
+            <pattern
+              id="polka-dots"
+              x="0"
+              y="0"
+              width="6"
+              height="6"
+              patternUnits="userSpaceOnUse"
+            >
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g id="Artboard-3-Copy-2" fill="#000000">
+                  <rect
+                    width="300"
+                    height="100"
+                    fill="rgba(222,222,222,0.95)"
+                  />
+                  <polygon id="Rectangle-9" points="5 0 6 0 0 6 0 5"></polygon>
+                  <polygon id="Rectangle-9-Copy" points="6 5 6 6 5 6"></polygon>
+                </g>
+              </g>
+            </pattern>
+          </defs>
+        <rect width="16px" height="16px" fill="url(#polka-dots)" />
+      </svg>
+      </div>
+      <div className="floor-container">
+        <img src={fullPlan} alt="Full Plan" />
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 900 338"
+          xmlSpace="preserve"
+        >
+          <defs>
+            <pattern
+              id="polka-dots"
+              x="0"
+              y="0"
+              width="6"
+              height="6"
+              patternUnits="userSpaceOnUse"
+            >
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g id="Artboard-3-Copy-2" fill="#000000">
+                  <rect
+                    width="300"
+                    height="100"
+                    fill="rgba(222,222,222,0.95)"
+                  />
+                  <polygon id="Rectangle-9" points="5 0 6 0 0 6 0 5"></polygon>
+                  <polygon id="Rectangle-9-Copy" points="6 5 6 6 5 6"></polygon>
+                </g>
+              </g>
+            </pattern>
+          </defs>
+          {/* <g id="Layer_1">
           <image width="900" height="338" xlinkHref={fullPlan}></image>
         </g> */}
-        {planFloors}
-      </svg>
+          {planFloors}
+        </svg>
       </div>
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton></Modal.Header>
