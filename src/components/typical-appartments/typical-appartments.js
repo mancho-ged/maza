@@ -17,7 +17,7 @@ export default class TypicalAppartments extends React.Component {
   render() {
     let binebi = MazaService.binebi;
     let appartments = binebi.map((app) => 
-      <TypicalAppartmentItem key={app.project.toString()} {...app}  />
+      <TypicalAppartmentItem key={app.project} {...app}  />
     );
 
     return (

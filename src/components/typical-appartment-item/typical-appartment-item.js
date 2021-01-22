@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import SwiperCore, { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
+import SwiperCore, { Navigation, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default class TypicalAppartmentItem extends Component {
@@ -21,6 +21,7 @@ export default class TypicalAppartmentItem extends Component {
 
   render() {
     let classes = "project mix category_1 mix_all flip-container col-md-7";
+    
     if (this.state.isToggleOn) {
       classes += " hover";
     }
@@ -46,10 +47,10 @@ export default class TypicalAppartmentItem extends Component {
     for (let i = 0; i < floors.length; i++) {
       if (sold[i]) {
         floor.push(
-          <h4 className="badge badge-primary mr-1 sold" >{floors[i]}</h4>
+          <h4 className="badge badge-primary mr-1 sold" key={i} >{floors[i]}</h4>
         );
       } else {
-        floor.push(<h4 className="badge badge-primary mr-1">{floors[i]}</h4>);
+        floor.push(<h4 className="badge badge-primary mr-1" key={i}>{floors[i]}</h4>);
       }
     }
 

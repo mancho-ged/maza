@@ -30,14 +30,14 @@ export default function Contact() {
       </div>
       <div className="col-md-4 d-flex justify-content-start align-items-center flex-column">
 
-        <a href="http://facebook.com" target="_blank">
+        <a href="http://facebook.com" target="_blank" rel="noreferrer">
         <img src={facebookIcon} alt="facebook" width="36" height="36" />
       </a>
       </div>
       <div className="col-md-4 d-flex justify-content-start align-items-center flex-column">
         <img src={locationIcon} alt="location" width="20" height="20" />
         <br />
-        <a href="https://goo.gl/maps/cTlM0" target="_blank">
+        <a href="https://goo.gl/maps/cTlM0" target="_blank" rel="noreferrer">
           ქ.თბილისი,დიდ დიღომი
           <br />
           მირიან მეფის ქუჩა 11<sup>დ</sup>
