@@ -2,7 +2,7 @@ import React from "react";
 import telephoneIcon from "../../images/icons/telephone.png";
 import locationIcon from "../../images/icons/location.png";
 import facebookIcon from "../../images/icons/facebook-large.png";
-import instagramIcon from "../../images/icons/instagram.png";
+import instagramIcon from "../../images/icons/Instagram.png";
 import styled from 'styled-components';
 
 const ContactStyled = styled.div`
@@ -37,7 +37,7 @@ export default function Contact() {
       </div>
       <div className="col-md-3 d-flex justify-content-start align-items-center flex-column">
 
-        <a href="facebook.com/maza.development" target="_blank" rel="noreferrer">
+        <a href="instagram.com/maza.development" target="_blank" rel="noreferrer">
         <img src={instagramIcon} alt="facebook" width="36" height="36" />
       </a>
       </div>
