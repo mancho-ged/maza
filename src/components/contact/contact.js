@@ -31,13 +31,13 @@ export default function Contact() {
       </div>
       <div className="col-md-3 d-flex justify-content-start align-items-center flex-column">
 
-        <a href="facebook.com/maza.development" target="_blank" rel="noreferrer">
+        <a href="https://facebook.com/maza.development" target="_blank" rel="noreferrer">
         <img src={facebookIcon} alt="facebook" width="36" height="36" />
       </a>
       </div>
       <div className="col-md-3 d-flex justify-content-start align-items-center flex-column">
 
-        <a href="instagram.com/maza.development" target="_blank" rel="noreferrer">
+        <a href="https://instagram.com/maza.development" target="_blank" rel="noreferrer">
         <img src={instagramIcon} alt="facebook" width="36" height="36" />
       </a>
       </div>

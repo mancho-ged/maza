@@ -30,7 +30,6 @@ import bina15_1 from "../images/binebi/15.jpg";
 import bina15_2 from "../images/binebi/15_1.jpg";
 import bina16_1 from "../images/binebi/16.jpg";
 import bina16_2 from "../images/binebi/16_1.jpg";
-import FacadeSlider from "../components/facade-slider";
 
 const MazaService = {
      binebi: [
@@ -53,7 +52,7 @@ const MazaService = {
           sold: [
             false,
             true,
-            false,
+            true,
             false,
             false,
             false,
@@ -131,7 +130,7 @@ const MazaService = {
           sold: [
             false,
             false,
-            true,
+            false,
             false,
             false,
             false,
@@ -170,7 +169,7 @@ const MazaService = {
           sold: [
             false,
             false,
-            true,
+            false,
             false,
             false,
             false,
