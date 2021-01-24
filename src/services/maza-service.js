@@ -31,6 +31,7 @@ import bina15_2 from "../images/binebi/15_1.jpg";
 import bina16_1 from "../images/binebi/16.jpg";
 import bina16_2 from "../images/binebi/16_1.jpg";
 
+
 const MazaService = {
      binebi: [
         {
@@ -52,7 +53,7 @@ const MazaService = {
           sold: [
             false,
             true,
-            true,
+            false,
             false,
             false,
             false,
@@ -520,7 +521,7 @@ const MazaService = {
           sold: [
             true,
             true,
-            true,
+            false,
             false,
             false,
             false,
@@ -559,7 +560,7 @@ const MazaService = {
           sold: [
             true,
             true,
-            false,
+            true,
             false,
             false,
             false,
@@ -598,7 +599,7 @@ const MazaService = {
           sold: [
             true,
             true,
-            false,
+            true,
             false,
             false,
             false,
@@ -637,7 +638,7 @@ const MazaService = {
           sold: [
             true,
             true,
-            false,
+            true,
             false,
             false,
             false,
