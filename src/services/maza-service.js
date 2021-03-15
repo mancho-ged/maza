@@ -105,11 +105,11 @@ const MazaService = {
           livingArea: 54.37,
           summerArea: 9.40,
           fullArea: 63.77,
-          entrance: 5.93,
-          bathroom: 3.15,
-          bedroom1: 13.33,
-          bedroom2: 12.53,
-          livingRoom: 19.43,
+          entrance: 4.56,
+          bathroom: 3.21,
+          bedroom1: 12.07,
+          bedroom2: 12.1,
+          livingRoom: 20.89,
           images: [bina2_1, bina2_2]
         },
         {
@@ -145,10 +145,10 @@ const MazaService = {
           summerArea: 8.17,
           fullArea: 51.02,
           entrance: 5.96,
-          bathroom: 3.78,
-          bedroom1: 14.34,
+          bathroom: 3.96,
+          bedroom1: 14.08,
           bedroom2: null,
-          livingRoom: 18.77,
+          livingRoom: 17.53,
           images: [bina3_1, bina3_2]
         },
         {
@@ -222,11 +222,11 @@ const MazaService = {
           livingArea: 44.76,
           summerArea: 8.24,
           fullArea: 53.00,
-          entrance: 6.91,
-          bathroom: 3.45,
-          bedroom1: 14.52,
+          entrance: 4.2,
+          bathroom: 3.66,
+          bedroom1: 14.13,
           bedroom2: null,
-          livingRoom: 19.88,
+          livingRoom: 21.41,
           images: [bina5_1, bina5_2]
         },
         {
@@ -261,11 +261,11 @@ const MazaService = {
           livingArea: 44.76,
           summerArea: 8.24,
           fullArea: 53.00,
-          entrance: 6.87,
-          bathroom: 3.45,
-          bedroom1: 14.64,
+          entrance: 4.2,
+          bathroom: 3.61,
+          bedroom1: 14.11,
           bedroom2: null,
-          livingRoom: 19.80,
+          livingRoom: 20.80,
           images: [bina6_1, bina6_2]
         },
         {
@@ -300,11 +300,11 @@ const MazaService = {
           livingArea: 44.76,
           summerArea: 8.24,
           fullArea: 53.00,
-          entrance: 6.91,
-          bathroom: 3.45,
-          bedroom1: 14.64,
+          entrance: 4.73,
+          bathroom: 3.61,
+          bedroom1: 14.11,
           bedroom2: null,
-          livingRoom: 19.76,
+          livingRoom: 21.02,
           images: [bina7_1, bina7_2]
         },
         {
@@ -339,11 +339,11 @@ const MazaService = {
           livingArea: 44.76,
           summerArea: 8.24,
           fullArea: 53.00,
-          entrance: 6.87,
-          bathroom: 3.53,
-          bedroom1: 14.64,
+          entrance: 4.73,
+          bathroom: 3.74,
+          bedroom1: 14.11,
           bedroom2: null,
-          livingRoom: 19.72,
+          livingRoom: 21.06,
           images: [bina8_1, bina8_2]
         },
         {
@@ -380,9 +380,9 @@ const MazaService = {
           fullArea: 51.30,
           entrance: 6.43,
           bathroom: 3.45,
-          bedroom1: 14.63,
+          bedroom1: 14.72,
           bedroom2: null,
-          livingRoom: 18.55,
+          livingRoom: 16.95,
           images: [bina9_1, bina9_2]
         },
         {
@@ -419,9 +419,9 @@ const MazaService = {
           fullArea: 51.02,
           entrance: 6.18,
           bathroom: 3.54,
-          bedroom1: 14.34,
+          bedroom1: 14.08,
           bedroom2: null,
-          livingRoom: 18.79,
+          livingRoom: 17.53,
           images: [bina10_1, bina10_2]
         },
         {
@@ -456,11 +456,11 @@ const MazaService = {
           livingArea: 54.37,
           summerArea: 9.40,
           fullArea: 63.77,
-          entrance: 5.89,
+          entrance: 4.59,
           bathroom: 3.15,
-          bedroom1: 12.55,
-          bedroom2: 13.33,
-          livingRoom: 19.45,
+          bedroom1: 12.07,
+          bedroom2: 12.1,
+          livingRoom: 20.89,
           images: [bina11_1, bina11_2]
         },
         {
@@ -496,8 +496,8 @@ const MazaService = {
           summerArea: 3.7,
           fullArea: 31.37,
           entrance: 3.45,
-          bathroom: 3.55,
-          bedroom1: 20.67,
+          bathroom: 3.5,
+          bedroom1: 27.67,
           bedroom2: null,
           livingRoom: null,
           images: [bina12_1, bina12_2]
@@ -536,9 +536,9 @@ const MazaService = {
           fullArea: 65.39,
           entrance: 5.09,
           bathroom: 3.96,
-          bedroom1: 15.75,
+          bedroom1: 14.53,
           bedroom2: 11.94,
-          livingRoom: 21.71,
+          livingRoom: 21.22,
           images: [bina13_1, bina13_2]
         },
         {
@@ -575,9 +575,9 @@ const MazaService = {
           fullArea: 53.83,
           entrance: 4.94,
           bathroom: 3.74,
-          bedroom1: 15.33,
+          bedroom1: 14.52,
           bedroom2: null,
-          livingRoom: 22.22,
+          livingRoom: 21.59,
           images: [bina14_1, bina14_2]
         },
         {
@@ -613,10 +613,10 @@ const MazaService = {
           summerArea: 7.60,
           fullArea: 53.83,
           entrance: 4.94,
-          bathroom: 3.74,
-          bedroom1: 15.21,
+          bathroom: 3.9,
+          bedroom1: 14.53,
           bedroom2: null,
-          livingRoom: 22.34,
+          livingRoom: 21.21,
           images: [bina15_1, bina15_2]
         },
         {
@@ -653,9 +653,9 @@ const MazaService = {
           fullArea: 63.19,
           entrance: 5.28,
           bathroom: 3.74,
-          bedroom1: 15.74,
+          bedroom1: 14.53,
           bedroom2: 9.79,
-          livingRoom: 21.70,
+          livingRoom: 21.21,
           images: [bina16_1, bina16_2]
         },
       ]
