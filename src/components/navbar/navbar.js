@@ -63,7 +63,7 @@ export default function TopNavbar() {
         collapseOnSelect
       >
         <Container>
-          <Navbar.Brand href="/home" className="logo">
+          <Navbar.Brand href="/" className="logo">
             <div>
               <span id="top" onClick={scrollToTop}>
                 <img src={logo} height="45" alt="Maza developement logo" />
