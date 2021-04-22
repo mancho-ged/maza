@@ -1,25 +1,33 @@
-import TopNavbar from "./components/navbar/navbar";
-import CurrentUnit from './components/current-unit';
-import Section2 from './components/section2';
-import Section3 from './components/section3';
-import PartnerCompanies from './components/partner-companies';
-import CompletedUnits from './components/completed-units';
-import Footer from './components/footer';
-import TypicalAppartments from "./components/typical-appartments";
+import React, { Component } from 'react';
+import { Switch, Route, Link } from "react-router-dom";
+import AuthService from "./services/auth.service";
+import Home from "./components/home";
+import Login from "./components/login";
+import Profile from "./components/profile";
 
-function App() {
-  return (
-    <div className="App">
-      <TopNavbar />
-      <CurrentUnit />
-      <Section2 />
-      <TypicalAppartments />
-      <Section3 />
-      <PartnerCompanies />
-      <CompletedUnits />
-      <Footer />
-    </div>
-  );
+export default class App extends Component{
+  constructor(props){
+    super(props);
+    // this.logOut = this.logOut.bind(this);
+
+    this.state = {
+      showModeratorBoard: false,
+      showAdminBoard: false,
+      currentUser: undefined,
+    };
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Switch>
+              <Route exact path={["/", "/home"]} component={Home} />
+              <Route exact path="/login" component={Login} />
+              {/* <Route exact path="/profile" component={Profile} /> */}
+        </Switch>
+      </div>
+    );
+  }
+  
 }
 
-export default App;
