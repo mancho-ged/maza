@@ -1,6 +1,6 @@
 {
   "name": "maza-project",
-  "homepage": "/",
+  "homepage": "http://mancho-ged.github.io/maza",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
