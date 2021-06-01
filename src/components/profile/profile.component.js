@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthService from "../../services/auth.service";
+import AdminNavbar from "../admin-navbar"
 
 export default class Profile extends Component {
   constructor(props) {
@@ -8,13 +9,16 @@ export default class Profile extends Component {
     this.state = {
       currentUser: AuthService.getCurrentUser(),
     };
+    
   }
+  
 
   render() {
     const { currentUser } = this.state;
 
     return (
       <div className="container">
+        <AdminNavbar />
         <header className="jumbotron">
           <h3>
             <strong>{currentUser.username}</strong> პროფილი
@@ -23,6 +27,7 @@ export default class Profile extends Component {
         <p>
           <strong>ტოკენი:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
           {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
+          
         </p>
         <p>
           <strong>Id:</strong> {currentUser.id}
