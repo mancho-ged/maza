@@ -1,6 +1,6 @@
 import { Component } from "react";
 import AdminNavbar from "../admin-navbar";
-import BoardApptsForm from '../board-appts-form'
+import BoardApptsForm from "../board-appts-form";
 import AppartmentsService from "../../services/appts.service";
 import styled from "styled-components";
 
@@ -12,6 +12,8 @@ class Board extends Component {
       allAppartments: [],
       loading: true,
       message: "",
+      appartments: [],
+      adding: false,
     };
   }
 
@@ -39,6 +41,46 @@ class Board extends Component {
       }
     );
   }
+  componentDidUpdate(prevProps, prevState) {
+    if(this.state.loading === true){
+      AppartmentsService.getAllAppartments().then(
+        (res) => {
+          const allAppartments = Object.keys(res.data).map((i) => res.data[i]);
+          this.setState(() => {
+            return{
+              allAppartments: allAppartments,
+              loading: false,
+            }
+            
+          });
+        },
+        (error) => {
+          const resMessage =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+  
+          this.setState({
+            loading: false,
+            message: resMessage,
+          });
+        }
+      );
+    }
+
+  }
+
+  onAppartmentAdded = () => {
+    this.setState({loading:true})
+  };
+
+  deleteAppt = (id) => {
+    AppartmentsService.deleteOneAppartment(id);
+    this.setState({loading:true})
+  }
+
   render() {
     const BoardItemStyled = styled.div`
       margin: 15px 0px;
@@ -48,13 +90,14 @@ class Board extends Component {
       box-shadow: 0 3px 0 rgba(14, 41, 77, 0.1);
       margin-bottom: 20px;
       background: #fff;
+      display: flex;
       .badge {
-        font-size: 13px;
+        font-size: 14px;
         padding: 7px 3px 4px 6px;
         letter-spacing: 3px;
+        margin-bottom:8px;
         &.sold {
           opacity: 0.8;
-          background: #dedede;
         }
       }
 
@@ -69,24 +112,34 @@ class Board extends Component {
         font-size: 22px;
         margin-top: 20px;
       }
+      .buttons {
+        margin-left: auto;
+      }
     `;
-
-    let appartments = this.state.allAppartments.map((app) => {
-      const allFloors = app.floors.map((floor, idx) => {
-        return (
-          <button
-            className="badge badge-primary mr-1"
-            issold={app.sold[idx] === true ? "yes" : "no"}
-            key={app + floor + idx}
-          >
-            {floor} {app.sold[idx] === true ? "- გაყიდულია" : ""}
-          </button>
-        );
-      });
+    let allFloors = [];
+    let appartments = this.state.allAppartments.map((app, idx) => {
+      if (this.state.allAppartments.length > 0) {
+        allFloors = app.floors.map((floor, idx) => {
+          return (
+            <button
+              className={`badge badge-primary mr-1 ${app.sold[idx] ? "sold" : "no"}`}
+              
+              key={app + floor + idx}
+            >
+              {floor} {app.sold[idx] === true ? "- გაყიდულია" : ""}
+            </button>
+          );
+        });
+      }
       return (
-        <BoardItemStyled>
-          <h2>{app.name}</h2>
-          <div className="projectinfo">{allFloors}</div>
+        <BoardItemStyled key={app.name + idx}>
+          <div>
+            <h2>{app.name}</h2>
+            <div className="projectinfo">{allFloors}</div>
+          </div>
+          <div className="buttons">
+            <button className="btn btn-warning" onClick={()=>{this.deleteAppt(app.id)}}>წაშლა</button>
+          </div>
         </BoardItemStyled>
       );
     });
@@ -95,12 +148,12 @@ class Board extends Component {
       <div className="container">
         <AdminNavbar />
         Board
-        <BoardApptsForm />
+        <BoardApptsForm onAppartmentAdded={this.onAppartmentAdded} />
         <div>{appartments}</div>
         {this.state.loading && (
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border text-primary" role="status">
-              <span class="sr-only">Loading...</span>
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
             </div>
           </div>
         )}

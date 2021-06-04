@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import AppartmentsService from "../../services/appts.service";
 import styled from "styled-components";
 
 const BoardApptsFormStyled = styled.div``;
@@ -20,130 +21,205 @@ class BoardApptsForm extends Component {
   constructor(props) {
     super(props);
     this.handleAddAppt = this.handleAddAppt.bind(this);
-    this.onChangeProject = this.onChangeProject.bind(this);
-    this.onChangeLivingArea = this.onChangeLivingArea.bind(this);
-    this.onChangeSummerArea = this.onChangeSummerArea.bind(this);
-    this.onChangeFullArea = this.onChangeFullArea.bind(this);
-    this.onChangeEntrance = this.onChangeEntrance.bind(this);
-    this.onChangeBathroom = this.onChangeBathroom.bind(this);
 
     this.state = {
       project: "",
       livingArea: "",
-      summerArea:"",
-      fullArea:"",
-      entrance:"",
+      summerArea: "",
+      fullArea: "",
+      entrance: "",
       bathroom: "",
+      bedroom1: "",
+      bedroom2: "",
+      livingRoom: "",
       loading: false,
       message: "",
     };
   }
-  onChangeProject(e) {
-    this.setState({
-      project: e.target.value,
-    });
-  }
-  onChangeLivingArea(e) {
-    this.setState({
-      livingArea: e.target.value,
-    });
-  }
-  onChangeSummerArea(e) {
-    this.setState({
-        summerArea: e.target.value,
-    });
-  }
-  onChangeFullArea(e) {
-    this.setState({
-        fullArea: e.target.value,
-    });
-  }
-  onChangeEntrance(e) {
-    this.setState({
-        fullArea: e.target.value,
-    });
-  }
-  onChangeBathroom(e) {
-    this.setState({
-        fullArea: e.target.value,
-    });
-  }
 
-  handleAddAppt(){
+  handleInputChange = (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
 
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleAddAppt(e) {
+    e.preventDefault();
+
+    this.setState({
+      loading: true,
+      message: "",
+    });
+
+    this.form.validateAll();
+    if (this.checkBtn.context._errors.length === 0) {
+      AppartmentsService.addAppartment(
+        this.state.project,
+        this.state.livingArea,
+        this.state.summerArea,
+        this.state.fullArea,
+        this.state.entrance,
+        this.state.bathroom,
+        this.state.bedroom1,
+        this.state.bedroom2,
+        this.state.livingRoom
+      ).then(() => {
+        this.setState({ loading: false });
+        this.props.onAppartmentAdded()
+      });
+    } else {
+      this.setState({
+        loading: false,
+      });
+    }
   }
   render() {
     return (
       <BoardApptsFormStyled>
-        <Form onSubmit={this.handleAddAppt}
-                ref={(c) => {
-                  this.form = c;
-                }}>
-          <div className="form-group">
-            <label htmlFor="project">პროექტი N</label>
-            <Input
-              type="number"
-              className="form-control"
-              name="project"
-              value={this.state.project}
-              onChange={this.onChangeProject}
-              validations={[required]}
+        <Form
+          onSubmit={this.handleAddAppt}
+          ref={(c) => {
+            this.form = c;
+          }}
+        >
+          <div className="row">
+            <div className="col-md-4">
+              <div className="form-group">
+                <label htmlFor="project">პროექტი N</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="project"
+                  value={this.state.project}
+                  onChange={this.handleInputChange}
+                  validations={[required]}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="livingArea">საცხოვრებელი ფართი</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="livingArea"
+                  value={this.state.livingArea}
+                  onChange={this.handleInputChange}
+                  validations={[required]}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="summerArea">საზაფხულო ფართი</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="summerArea"
+                  value={this.state.summerArea}
+                  onChange={this.handleInputChange}
+                  validations={[required]}
+                />
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="form-group">
+                <label htmlFor="fullArea">სრული ფართი</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="fullArea"
+                  value={this.state.fullArea}
+                  onChange={this.handleInputChange}
+                  validations={[required]}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="entrance">შემოსასვლელი</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="entrance"
+                  value={this.state.entrance}
+                  onChange={this.handleInputChange}
+                  validations={[required]}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="bathroom">სველი წერტილი</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="bathroom"
+                  value={this.state.bathroom}
+                  onChange={this.handleInputChange}
+                  validations={[required]}
+                />
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="form-group">
+                <label htmlFor="bedroom1">საძინებელი</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="bedroom1"
+                  value={this.state.bedroom1}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="bedroom2">საძინებელი 2</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="bedroom2"
+                  value={this.state.bedroom2}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="livingRoom">მისაღები</label>
+                <Input
+                  type="number"
+                  className="form-control"
+                  name="livingRoom"
+                  value={this.state.livingRoom}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+            </div>
+            <div className="col-md-12">
+              <div className="form-group text-right">
+                <button
+                  className="btn btn-primary"
+                  disabled={this.state.loading}
+                >
+                  {this.state.loading && (
+                    <span className="spinner-border spinner-border-sm"></span>
+                  )}
+                  <span>დამატება</span>
+                </button>
+              </div>
+            </div>
+
+            {this.state.message && (
+              <div className="col-md-12">
+                <div className="form-group">
+                  <div className="alert alert-danger" role="alert">
+                    {this.state.message}
+                  </div>
+                </div>
+              </div>
+            )}
+            <CheckButton
+              style={{ display: "none" }}
+              ref={(c) => {
+                this.checkBtn = c;
+              }}
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="livingArea">საცხოვრებელი ფართი</label>
-            <Input
-              type="text"
-              className="form-control"
-              name="livingArea"
-              value={this.state.livingArea}
-              onChange={this.onChangeLivingArea}
-              validations={[required]}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="summerArea">საზაფხულო ფართი</label>
-            <Input
-              type="text"
-              className="form-control"
-              name="summerArea"
-              value={this.state.summerArea}
-              onChange={this.onChangeSummerArea}
-              validations={[required]}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="fullArea">სრული ფართი</label>
-            <Input
-              type="text"
-              className="form-control"
-              name="fullArea"
-              value={this.state.fullArea}
-              onChange={this.onChangeFullArea}
-              validations={[required]}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="entrance">შემოსასვლელი</label>
-            <Input
-              type="text"
-              className="form-control"
-              name="entrance"
-              value={this.state.entrance}
-              onChange={this.onChangeEntrance}
-              validations={[required]}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="bathroom">სველი წერტილი</label>
-            <Input
-              type="text"
-              className="form-control"
-              name="bathroom"
-              value={this.state.bathroom}
-              onChange={this.onChangeBathroom}
-              validations={[required]}
-            />
+
+            {/* TODO: add images array */}
           </div>
         </Form>
       </BoardApptsFormStyled>
