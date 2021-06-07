@@ -21,6 +21,7 @@ class BoardApptsForm extends Component {
   constructor(props) {
     super(props);
     this.handleAddAppt = this.handleAddAppt.bind(this);
+    this.handleEditAppt = this.handleEditAppt.bind(this);
 
     this.state = {
       project: "",
@@ -35,6 +36,48 @@ class BoardApptsForm extends Component {
       loading: false,
       message: "",
     };
+  }
+
+  componentDidMount() {
+    let apptId = this.props.apptId;
+    if (apptId) {
+      console.log(apptId);
+      this.setState({loading:true});
+      AppartmentsService.getOneAppartment(apptId).then(
+        (res) => {
+          console.log(res)
+          this.setState({
+            project: res.data.project,
+            name: res.data.name,
+            floors: res.data.floors,
+            sold:res.data.sold,
+            livingArea: res.data.livingArea,
+            summerArea: res.data.summerArea,
+            fullArea: res.data.fullArea,
+            entrance: res.data.entrance,
+            bathroom: res.data.bathroom,
+            bedroom1: res.data.bedroom1,
+            bedroom2: res.data.bedroom2,
+            livingRoom: res.data.livingRoom,
+            loading: false,
+            message: "",
+          });
+        },
+        (error) => {
+          const resMessage =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+
+          this.setState({
+            loading: false,
+            message: resMessage,
+          });
+        }
+      );
+    }
   }
 
   handleInputChange = (e) => {
@@ -69,7 +112,40 @@ class BoardApptsForm extends Component {
         this.state.livingRoom
       ).then(() => {
         this.setState({ loading: false });
-        this.props.onAppartmentAdded()
+        this.props.onAppartmentAdded();
+      });
+    } else {
+      this.setState({
+        loading: false,
+      });
+    }
+  }
+
+  handleEditAppt(e) {
+    e.preventDefault();
+
+    this.setState({
+      loading: true,
+      message: "",
+    });
+
+    this.form.validateAll();
+    if (this.checkBtn.context._errors.length === 0) {
+      AppartmentsService.editAppartment(
+        this.props.apptId, {
+          project:this.state.project,
+          livingArea: this.state.livingArea,
+          summerArea: this.state.summerArea,
+          fullArea: this.state.fullArea,
+          entrance: this.state.entrance,
+          bathroom: this.state.bathroom,
+          bedroom1: this.state.bedroom1,
+          bedroom2: this.state.bedroom2,
+          livingRoom: this.state.livingRoom
+        }
+        
+      ).then(() => {
+        this.setState({ loading: false });
       });
     } else {
       this.setState({
@@ -81,7 +157,7 @@ class BoardApptsForm extends Component {
     return (
       <BoardApptsFormStyled>
         <Form
-          onSubmit={this.handleAddAppt}
+          onSubmit={this.props.apptId?this.handleEditAppt:this.handleAddAppt}
           ref={(c) => {
             this.form = c;
           }}
@@ -97,6 +173,7 @@ class BoardApptsForm extends Component {
                   value={this.state.project}
                   onChange={this.handleInputChange}
                   validations={[required]}
+                  disabled = {this.props.apptId}
                 />
               </div>
               <div className="form-group">
@@ -192,13 +269,15 @@ class BoardApptsForm extends Component {
             <div className="col-md-12">
               <div className="form-group text-right">
                 <button
-                  className="btn btn-primary"
+                  className={
+                    this.props.apptId ? "btn btn-success" : "btn btn-primary"
+                  }
                   disabled={this.state.loading}
                 >
                   {this.state.loading && (
                     <span className="spinner-border spinner-border-sm"></span>
                   )}
-                  <span>დამატება</span>
+                  <span>{this.props.apptId ? "შენახვა" : "დამატება"}</span>
                 </button>
               </div>
             </div>

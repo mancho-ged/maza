@@ -41,8 +41,8 @@ class AppartmentsService {
       "X",
       "XI",
     ];
-    let sold = new Array(11);
-    sold.fill(false);
+    let sold = new Array(11).fill(false);
+
     return axios.post(API_URL, {
       project,
       name,
@@ -62,6 +62,22 @@ class AppartmentsService {
   // deleting
   deleteOneAppartment(id) {
     return axios.delete(API_URL + id, { headers: authHeader() });
+  }
+
+  //editing
+  editAppartment(id, obj){
+    return axios.put(API_URL + id,{
+      project: obj.project,
+      livingArea: obj.livingArea,
+      summerArea: obj.summerArea,
+      fullArea: obj.fullArea,
+      entrance: obj.entrance,
+      bathroom: obj.bathroom,
+      bedroom1: obj.bedroom1,
+      bedroom2: obj.bedroom2,
+      livingRoom: obj.livingRoom,
+      sold: obj.sold
+    }, { headers: authHeader() });
   }
 }
 
