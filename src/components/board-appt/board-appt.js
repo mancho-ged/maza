@@ -7,6 +7,7 @@ class BoardAppt extends Component {
     super(props);
     this.state = {
       editBlockOpen: false,
+      deleteLoading: false
     };
   }
   handleOpenEdit = () => {
@@ -101,9 +102,12 @@ class BoardAppt extends Component {
             <button
               className="btn btn-warning"
               onClick={() => {
+                this.setState({deleteLoading:true});
                 this.props.onAppartmentDeleted(app.id);
               }}
+              
             >
+                {this.state.deleteLoading&&(<span className="spinner-border spinner-border-sm"></span>)}
               წაშლა
             </button>
             <button

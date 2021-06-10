@@ -23,9 +23,9 @@ class Board extends Component {
   componentDidMount() {
     AppartmentsService.getAllAppartments().then(
       (res) => {
-        const allAppartments = Object.keys(res.data).map((i) => res.data[i]);
+        let newAllAppartments = Object.keys(res.data).map((i) => res.data[i]);
         this.setState({
-          allAppartments: allAppartments,
+          allAppartments: newAllAppartments,
           loading: false,
         });
       },
@@ -48,13 +48,18 @@ class Board extends Component {
     if (this.state.loading === true) {
       AppartmentsService.getAllAppartments().then(
         (res) => {
-          const allAppartments = Object.keys(res.data).map((i) => res.data[i]);
+          try{
+            const allAppartments = Object.keys(res.data).map((i) => res.data[i]);
           this.setState(() => {
             return {
               allAppartments: allAppartments,
               loading: false,
             };
           });
+          } catch(err){
+            console.log(err)
+          }
+          
         },
         (error) => {
           const resMessage =
@@ -72,6 +77,14 @@ class Board extends Component {
       );
     }
   }
+  componentWillUnmount() {
+    this.setState(() => {
+      return {
+        allAppartments: null,
+        loading: false,
+      };
+    });
+}
   updateFloorsSold = (app, id, idx) => {
     this.setState({
       loading: true,
@@ -98,9 +111,9 @@ class Board extends Component {
     this.setState({ loading: true });
   };
 
-  deleteAppt = (id) => {
+  deleteAppt = (id) => {  
     AppartmentsService.deleteOneAppartment(id);
-    this.setState({ loading: true });
+    this.setState({ loading: true });   
   };
 
   render() {

@@ -16,6 +16,10 @@ class AppartmentsService {
     return axios.get(API_URL + id, { headers: authHeader() });
   }
 
+  uploadImage(data, apptId){
+    return axios.post(API_URL + 'upload/' + apptId, data, { headers: authHeader() })
+  }
+
   addAppartment(
     project,
     livingArea,
@@ -42,6 +46,7 @@ class AppartmentsService {
       "XI",
     ];
     let sold = new Array(11).fill(false);
+    let images = [];
 
     return axios.post(API_URL, {
       project,
@@ -56,6 +61,7 @@ class AppartmentsService {
       bedroom1,
       bedroom2,
       livingRoom,
+      images
     });
   }
 
@@ -76,7 +82,8 @@ class AppartmentsService {
       bedroom1: obj.bedroom1,
       bedroom2: obj.bedroom2,
       livingRoom: obj.livingRoom,
-      sold: obj.sold
+      sold: obj.sold,
+      images: obj.images
     }, { headers: authHeader() });
   }
 }
